@@ -1,7 +1,7 @@
 import 'package:chat_app/components/rounded_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'chat_screen.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 
