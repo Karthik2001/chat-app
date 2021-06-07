@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:chat_app/EncryptAndDecrypt/EndToEndEncryption.dart';
 import 'package:chat_app/components/rounded_button.dart';
 import 'package:chat_app/network_utils/api.dart';
 import 'package:chat_app/screens/welcome_screen.dart';
@@ -159,12 +160,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     setState(() {
       //_isLoading = true;
     });
+    print(EndToEndEncryption().Decrypt('aNpbCJK/8jllKj0/U+y2/g=='));
     var data = {
-      'email': "adfrdfs@gmail.com",
+      'email': EndToEndEncryption().Encrypt(email),
       'password': password,
-      'phone': '8084441194',
-      'fname': fName,
-      'lname': lName
+      'phone': EndToEndEncryption().Encrypt(number),
+      'fname': EndToEndEncryption().Encrypt(fName),
+      'lname': EndToEndEncryption().Encrypt(lName)
     };
 
     var res = await Network().authData(data, '/register');
