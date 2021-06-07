@@ -160,9 +160,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     setState(() {
       //_isLoading = true;
     });
-    print(EndToEndEncryption().Decrypt('aNpbCJK/8jllKj0/U+y2/g=='));
+    print(EndToEndEncryption().Encrypt(fName).toString());
     var data = {
-      'email': EndToEndEncryption().Encrypt(email),
+      'email': email,
       'password': password,
       'phone': EndToEndEncryption().Encrypt(number),
       'fname': EndToEndEncryption().Encrypt(fName),
